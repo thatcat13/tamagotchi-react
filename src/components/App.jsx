@@ -4,7 +4,7 @@ import House from './House';
 function App() {
   return(
     <div>
-      <style jsx global>
+      <style global jsx>
         {`
         * {
           box-sizing: border-box;

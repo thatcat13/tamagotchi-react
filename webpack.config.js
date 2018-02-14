@@ -42,7 +42,7 @@ module.exports = {
                name: 'images/[hash]-[name].[ext]'
              }
            }
-         },        
+         },
         {
           test: /\.jsx?$/,
           enforce: "pre",
@@ -63,7 +63,8 @@ module.exports = {
               "react",
             ],
             plugins: [
-              "react-hot-loader/babel"
+              "react-hot-loader/babel",
+              "styled-jsx/babel"
             ]
           }
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import lildude from './../assets/images/lildude.png'
+import lildude from './../assets/images/lildude.png';
 
 
 function LilDude() {
