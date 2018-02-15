@@ -9,7 +9,7 @@ class House extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      life: 100,
+      life: 20,
       dude: lildude
     };
     this.homeAddFood = this.homeAddFood.bind(this);
@@ -76,7 +76,7 @@ class House extends React.Component {
 
   componentDidMount() {
     this.updateTime= setInterval(() =>
-    this.homeUpdate(), 3000);
+    this.homeUpdate(), 500);
   }
 
   render() {
@@ -84,18 +84,31 @@ class House extends React.Component {
       <div>
         <style jsx>
           {`
+
             .container{
               background-image: url(${bg});
               width: 1280px;
               height: 720px;
               background-repeat: no-repeat;
-
+            },
+            .button {
+              width: '200px',
+              height: '75px',
+              borderRadius: '50px',
+              fontSize: '1em',
+              fontWeight: 'bolder',
+              textAlign: 'center',
+              backgroundColor: '#fe07cd',
+              border: '2px Solid #1f3c68',
+              color: 'white',
+              textShadow: '2px 1px 2px black',
+              margin: '10px'
             }
             `}
         </style>
         <div className='container'>
-          <button onClick={this.chooseLilPinkDude} >Choose Pink Dude</button>
-          <button onClick={this.chooseLilYellowDude}>Choose Yellow Dude</button>
+          <button className='button' onClick={this.chooseLilPinkDude} >Choose Pink Dude</button>
+          <button className='button' onClick={this.chooseLilYellowDude}>Choose Yellow Dude</button>
           <Display passedLife={this.state.life} passedDude={this.state.dude}/>
           <Actions passedAddFood={this.homeAddFood} passedAddSleep={this.homeAddSleep} passedAddPlay={this.homeAddPlay}/>
         </div>
