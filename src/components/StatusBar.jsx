@@ -3,10 +3,29 @@ import PropTypes from 'prop-types';
 
 
 function StatusBar(props) {
-  function test(){
-    if (props.statusPassedLife <= 75) {
-      let bar4 = true;
-    }
+  let bar4={}
+  let bar3={}
+  let bar2={}
+  let bar1={}
+  if (props.statusPassedLife <= 75) {
+    bar4 = {
+      backgroundColor: '#94bc7d'
+    };
+  }
+  if (props.statusPassedLife <= 50){
+    bar3 = {
+      backgroundColor: '#94bc7d'
+    };
+  }
+  if (props.statusPassedLife <= 25){
+    bar2 = {
+      backgroundColor: '#94bc7d'
+    };
+  }
+  if (props.statusPassedLife === 0){
+    bar1 = {
+      backgroundColor: '#94bc7d'
+    };
   }
   return(
     <div>
@@ -35,16 +54,16 @@ function StatusBar(props) {
       </style>
       <h1>Status Bar {props.statusPassedLife}</h1>
       <div className='mainBar'>
-        <div className='bar1 bar'>
+        <div  style={bar1} className='bar'>
 
         </div>
-        <div className='bar2 bar'>
+        <div  style={bar2} className='bar'>
 
         </div>
-        <div className='bar3 bar'>
+        <div  style={bar3} className='bar'>
 
         </div>
-        <div className='bar4 bar'>
+        <div style={bar4} className='bar'>
 
         </div>
       </div>

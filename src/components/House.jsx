@@ -7,7 +7,7 @@ class House extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      life: 100
+      life: 78
     };
     this.homeAddFood = this.homeAddFood.bind(this);
     this.homeAddSleep = this.homeAddSleep.bind(this);
@@ -43,7 +43,7 @@ class House extends React.Component {
   }
   componentDidMount() {
     this.updateTime= setInterval(() =>
-    this.homeUpdate(), 5000);
+    this.homeUpdate(), 1000);
   }
 
   render() {
