@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
-function StatusBar() {
+function StatusBar(props) {
+  function test(){
+    if (props.statusPassedLife <= 75) {
+      let bar4 = true;
+    }
+  }
   return(
     <div>
       <style jsx>
@@ -27,7 +33,7 @@ function StatusBar() {
           }
         `}
       </style>
-      <h1>Status Bar</h1>
+      <h1>Status Bar {props.statusPassedLife}</h1>
       <div className='mainBar'>
         <div className='bar1 bar'>
 
@@ -45,5 +51,7 @@ function StatusBar() {
     </div>
   );
 }
-
+StatusBar.propTypes = {
+  statusPassedLife: PropTypes.number
+};
 export default StatusBar;

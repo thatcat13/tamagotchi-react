@@ -47,8 +47,8 @@ function Actions(props) {
     <div style={mainDiv}>
       <div style={buttonDiv}>
         <button onClick={actionAddFood}  style={buttonStyle}>Feed Lil Dude</button>
-        <button onClick={actionAddSleep} style={buttonStyle}>Play with Lil Dude</button>
-        <button onClick={actionAddPlay} style={buttonStyle}>Put Lil Dude to Bed</button>
+        <button onClick={actionAddPlay} style={buttonStyle}>Play with Lil Dude</button>
+        <button onClick={actionAddSleep} style={buttonStyle}>Put Lil Dude to Bed</button>
       </div>
     </div>
   );

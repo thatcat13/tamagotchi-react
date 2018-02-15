@@ -10,39 +10,42 @@ class House extends React.Component {
       life: 100
     };
     this.homeAddFood = this.homeAddFood.bind(this);
+    this.homeAddSleep = this.homeAddSleep.bind(this);
+    this.homeAddPlay = this.homeAddPlay.bind(this);
   }
   homeAddFood(){
-    let newLife = this.state.life;
-    newLife += 10;
-    this.setState({life: newLife});
-    console.log(newLife);
+    let foodLife = this.state.life;
+    foodLife += 10;
+    this.setState({life: foodLife});
+    console.log(foodLife);
   }
   homeAddSleep(){
-    let newLife = this.state.life;
-    newLife += 30;
-    this.setState({life: newLife});
-    console.log(newLife);
+    let sleepLife = this.state.life;
+    sleepLife += 30;
+    this.setState({life: sleepLife});
+    console.log(sleepLife);
   }
   homeAddPlay(){
-    let newLife = this.state.life;
-    newLife += 5;
-    this.setState({life: newLife});
-    console.log(newLife);
+    let playLife = this.state.life;
+    playLife += 5;
+    this.setState({life: playLife});
+    console.log(playLife);
   }
-  // componentDidMount() {
-  //   this.health = setInterval(() => {
-  //     if(this.health === 0){
-  //       return this.health;
-  //     } else {
-  //       this.health --;
-  //     }
-  //   }, 4000);
-  // }
-  //
-  //
-  // componentWillUnmount(){
-  //   clearInterval(this.health);
-  // }
+  homeUpdate(){
+    let updateLife = this.state.life;
+    if(updateLife === 0){
+      alert('You Have Killed Lil Dude')
+      clearInterval(this.updateTime)
+    } else {
+      updateLife --;
+    }
+    this.setState({life: updateLife});
+  }
+  componentDidMount() {
+    this.updateTime= setInterval(() =>
+    this.homeUpdate(), 5000);
+  }
+
   render() {
     return(
       <div>
@@ -58,7 +61,7 @@ class House extends React.Component {
             `}
         </style>
         <div className='container'>
-          <Display/>
+          <Display passedLife={this.state.life}/>
           <Actions passedAddFood={this.homeAddFood} passedAddSleep={this.homeAddSleep} passedAddPlay={this.homeAddPlay}/>
         </div>
       </div>
