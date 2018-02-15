@@ -1,8 +1,13 @@
 import React from 'react';
 import lildude from './../assets/images/lildude.png';
+import PropTypes from 'prop-types';
+import lilDeath from './../assets/images/lilDeath1.jpg';
 
-
-function LilDude() {
+function LilDude(props) {
+  let character = lildude;
+  if (props.statusPassedLife === 0){
+    character = lilDeath;
+  }
   return(
     <div>
       <style jsx>
@@ -14,20 +19,35 @@ function LilDude() {
 
 
           }
+          @keyframes moving {
+              0%   {left: 53%;}
+              25%  {left: 33%;}
+              50%  {left: 13%;}
+              100% {left: 23%;}
+          }
+
           img{
             position: absolute;
             height:300px;
             width: auto;
-            top: 280px;
+            top: 240px;
             left: 50%;
+            animation-name: moving;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
           }
         `}
       </style>
       <div className='imgArea'>
-        <img src={lildude}/>
+        <img src={character}/>
       </div>
     </div>
   );
 }
+
+LilDude.propTypes = {
+  statusPassedLife: PropTypes.number
+};
 
 export default LilDude;

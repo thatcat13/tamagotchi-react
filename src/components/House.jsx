@@ -16,20 +16,29 @@ class House extends React.Component {
   homeAddFood(){
     let foodLife = this.state.life;
     foodLife += 10;
+    if (foodLife > 100) {
+      foodLife = 100;
+    }
     this.setState({life: foodLife});
-    console.log(foodLife);
+
   }
   homeAddSleep(){
     let sleepLife = this.state.life;
     sleepLife += 30;
+    if (sleepLife > 100) {
+      sleepLife = 100;
+    }
     this.setState({life: sleepLife});
-    console.log(sleepLife);
+
   }
   homeAddPlay(){
     let playLife = this.state.life;
     playLife += 5;
+    if (playLife > 100) {
+      playLife = 100;
+    }
     this.setState({life: playLife});
-    console.log(playLife);
+
   }
   homeUpdate(){
     let updateLife = this.state.life;
@@ -43,7 +52,7 @@ class House extends React.Component {
   }
   componentDidMount() {
     this.updateTime= setInterval(() =>
-    this.homeUpdate(), 1000);
+    this.homeUpdate(), 3000);
   }
 
   render() {

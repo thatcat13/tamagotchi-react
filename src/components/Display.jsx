@@ -8,7 +8,7 @@ function Display(props) {
     <div>
 
       <StatusBar statusPassedLife={props.passedLife}/>
-      <LilDude/>
+      <LilDude statusPassedLife={props.passedLife}/>
     </div>
   );
 }
