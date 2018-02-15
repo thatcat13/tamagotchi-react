@@ -1,7 +1,5 @@
 import React from 'react';
-import lildude from './../assets/images/lildude.png';
 import lilDeath from './../assets/images/lilDeath1.jpg';
-import lilYellowDude from './../assets/images/lildude2.png';
 import PropTypes from 'prop-types';
 
 function LilDude(props) {
@@ -9,6 +7,7 @@ function LilDude(props) {
   if (props.charPassedLife === 0){
     character = lilDeath;
   }
+  
   return(
     <div>
       <style jsx>
@@ -17,9 +16,8 @@ function LilDude(props) {
             width:100%;
             height:100%;
             position: relative;
-
-
           }
+
           @keyframes moving {
               0%   {left: 53%;}
               25%  {left: 33%;}

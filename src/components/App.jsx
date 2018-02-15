@@ -12,13 +12,9 @@ function App() {
           padding: 0;
           font-family: 'Roboto Mono', monospace;
         }
-
         `}
       </style>
-      
       <House />
-
-
     </div>
   );
 }

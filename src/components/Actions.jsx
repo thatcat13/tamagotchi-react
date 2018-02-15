@@ -5,18 +5,14 @@ import PropTypes from 'prop-types';
 function Actions(props) {
 
   function actionAddFood(){
-    console.log('Food');
     props.passedAddFood();
   }
   function actionAddSleep(){
-    console.log('Sleep');
     props.passedAddSleep();
   }
   function actionAddPlay(){
-    console.log('Play');
     props.passedAddPlay();
   }
-
 
   const mainDiv = {
     display: 'flex',
@@ -24,10 +20,12 @@ function Actions(props) {
     alignItems: 'flex-end',
     marginLeft: '10px'
   };
+
   const buttonDiv = {
     display: 'flex',
     justifyContent: 'space-around'
   };
+  
   const buttonStyle = {
     width: '200px',
     height: '75px',
@@ -40,7 +38,6 @@ function Actions(props) {
     color: 'white',
     textShadow: '2px 1px 2px black',
     margin: '10px'
-
   };
 
   return(

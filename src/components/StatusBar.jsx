@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function StatusBar(props) {
-  let bar4={}
-  let bar3={}
-  let bar2={}
-  let bar1={}
-  let header={}
+  let bar4, bar3, bar2, bar1, header={};
+  
   if (props.statusPassedLife <= 75) {
     bar4 = {
       backgroundColor: '#94bc7d'
@@ -31,6 +27,7 @@ function StatusBar(props) {
       backgroundColor: '#94bc7d'
     };
   }
+
   return(
     <div>
       <style jsx>
@@ -58,23 +55,17 @@ function StatusBar(props) {
       </style>
       <h1 style={header}>Health: {props.statusPassedLife}</h1>
       <div className='mainBar'>
-        <div  style={bar1} className='bar'>
-
-        </div>
-        <div  style={bar2} className='bar'>
-
-        </div>
-        <div  style={bar3} className='bar'>
-
-        </div>
-        <div style={bar4} className='bar'>
-
-        </div>
+        <div  style={bar1} className='bar'></div>
+        <div  style={bar2} className='bar'></div>
+        <div  style={bar3} className='bar'></div>
+        <div style={bar4} className='bar'></div>
       </div>
     </div>
   );
 }
+
 StatusBar.propTypes = {
   statusPassedLife: PropTypes.number
 };
+
 export default StatusBar;

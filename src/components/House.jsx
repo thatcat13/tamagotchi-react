@@ -4,20 +4,23 @@ import Actions from './Actions';
 import bg from './../assets/images/bg.jpg';
 import lildude from './../assets/images/lildude.png';
 import lilYellowDude from './../assets/images/lildude2.png';
+import Footer from './Footer';
+
 
 class House extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      life: 20,
+      life: 100,
       dude: lildude
     };
     this.homeAddFood = this.homeAddFood.bind(this);
     this.homeAddSleep = this.homeAddSleep.bind(this);
     this.homeAddPlay = this.homeAddPlay.bind(this);
-    this.chooseLilPinkDude = this.chooseLilPinkDude.bind(this);
-    this.chooseLilYellowDude = this.chooseLilYellowDude.bind(this);
+    this.handleChooseLilPinkDude = this.handleChooseLilPinkDude.bind(this);
+    this.handleChooseLilYellowDude = this.handleChooseLilYellowDude.bind(this);
   }
+
   homeAddFood(){
     let foodLife = this.state.life;
     foodLife += 10;
@@ -25,8 +28,8 @@ class House extends React.Component {
       foodLife = 100;
     }
     this.setState({life: foodLife});
-
   }
+
   homeAddSleep(){
     let sleepLife = this.state.life;
     sleepLife += 30;
@@ -34,8 +37,8 @@ class House extends React.Component {
       sleepLife = 100;
     }
     this.setState({life: sleepLife});
-
   }
+
   homeAddPlay(){
     let playLife = this.state.life;
     playLife += 5;
@@ -43,40 +46,34 @@ class House extends React.Component {
       playLife = 100;
     }
     this.setState({life: playLife});
-
   }
+
   homeUpdate(){
     let updateLife = this.state.life;
     if(updateLife === 0){
-      alert('You Killed Lil Dude Oh Noes!')
-      clearInterval(this.updateTime)
+      alert('You Killed Lil Dude Oh Noes!');
+      clearInterval(this.updateTime);
     } else {
       updateLife --;
     }
     this.setState({life: updateLife});
   }
 
-  chooseLilPinkDude(){
+  handleChooseLilPinkDude(){
     let chosenLilPinkDude = this.state.dude;
     chosenLilPinkDude = lildude;
     this.setState({dude: chosenLilPinkDude});
-    console.log(chosenLilPinkDude);
   }
 
-  chooseLilYellowDude(){
+  handleChooseLilYellowDude(){
     let chosenLilYellowDude = this.state.dude;
     chosenLilYellowDude = lilYellowDude;
     this.setState({dude: chosenLilYellowDude});
-    console.log(chosenLilYellowDude);
-  }
-
-  componentWillMount() {
-
   }
 
   componentDidMount() {
     this.updateTime= setInterval(() =>
-    this.homeUpdate(), 500);
+      this.homeUpdate(), 500);
   }
 
   render() {
@@ -84,37 +81,45 @@ class House extends React.Component {
       <div>
         <style jsx>
           {`
-
+            .one{
+              left: 14%;
+              top: 12%;
+            }
+            .two{
+              left: 1%;
+              top: 12%;
+            }
+            .button{
+              width: 150px;
+              height: 55px;
+              border-radius: 50px;
+              background-color: #fe07cd;
+              border: 2px Solid #1f3c68;
+              position: absolute;
+              margin-top: 8px;
+              color: white;
+              font-size: 1em;
+            }
             .container{
               background-image: url(${bg});
               width: 1280px;
               height: 720px;
               background-repeat: no-repeat;
+              position: relative;
             },
-            .button {
-              width: '200px',
-              height: '75px',
-              borderRadius: '50px',
-              fontSize: '1em',
-              fontWeight: 'bolder',
-              textAlign: 'center',
-              backgroundColor: '#fe07cd',
-              border: '2px Solid #1f3c68',
-              color: 'white',
-              textShadow: '2px 1px 2px black',
-              margin: '10px'
-            }
             `}
         </style>
         <div className='container'>
-          <button className='button' onClick={this.chooseLilPinkDude} >Choose Pink Dude</button>
-          <button className='button' onClick={this.chooseLilYellowDude}>Choose Yellow Dude</button>
+          <div className='buttonArea'>
+            <button className='button one' onClick={this.handleChooseLilPinkDude} >Choose Pink Dude</button>
+            <button className='button two' onClick={this.handleChooseLilYellowDude}>Choose Yellow Dude</button>
+          </div>
           <Display passedLife={this.state.life} passedDude={this.state.dude}/>
           <Actions passedAddFood={this.homeAddFood} passedAddSleep={this.homeAddSleep} passedAddPlay={this.homeAddPlay}/>
         </div>
+        <Footer />
       </div>
     );
-
   }
 }
 
