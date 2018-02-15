@@ -2,16 +2,21 @@ import React from 'react';
 import Display from './Display';
 import Actions from './Actions';
 import bg from './../assets/images/bg.jpg';
+import lildude from './../assets/images/lildude.png';
+import lilYellowDude from './../assets/images/lildude2.png';
 
 class House extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      life: 100
+      life: 100,
+      dude: lildude
     };
     this.homeAddFood = this.homeAddFood.bind(this);
     this.homeAddSleep = this.homeAddSleep.bind(this);
     this.homeAddPlay = this.homeAddPlay.bind(this);
+    this.chooseLilPinkDude = this.chooseLilPinkDude.bind(this);
+    this.chooseLilYellowDude = this.chooseLilYellowDude.bind(this);
   }
   homeAddFood(){
     let foodLife = this.state.life;
@@ -50,6 +55,25 @@ class House extends React.Component {
     }
     this.setState({life: updateLife});
   }
+
+  chooseLilPinkDude(){
+    let chosenLilPinkDude = this.state.dude;
+    chosenLilPinkDude = lildude;
+    this.setState({dude: chosenLilPinkDude});
+    console.log(chosenLilPinkDude);
+  }
+
+  chooseLilYellowDude(){
+    let chosenLilYellowDude = this.state.dude;
+    chosenLilYellowDude = lilYellowDude;
+    this.setState({dude: chosenLilYellowDude});
+    console.log(chosenLilYellowDude);
+  }
+
+  componentWillMount() {
+
+  }
+
   componentDidMount() {
     this.updateTime= setInterval(() =>
     this.homeUpdate(), 3000);
@@ -70,7 +94,9 @@ class House extends React.Component {
             `}
         </style>
         <div className='container'>
-          <Display passedLife={this.state.life}/>
+          <button onClick={this.chooseLilPinkDude} >Choose Pink Dude</button>
+          <button onClick={this.chooseLilYellowDude}>Choose Yellow Dude</button>
+          <Display passedLife={this.state.life} passedDude={this.state.dude}/>
           <Actions passedAddFood={this.homeAddFood} passedAddSleep={this.homeAddSleep} passedAddPlay={this.homeAddPlay}/>
         </div>
       </div>

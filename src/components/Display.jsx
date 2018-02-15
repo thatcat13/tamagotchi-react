@@ -8,11 +8,12 @@ function Display(props) {
     <div>
 
       <StatusBar statusPassedLife={props.passedLife}/>
-      <LilDude statusPassedLife={props.passedLife}/>
+      <LilDude charPassedLife={props.passedLife} charPassedDude={props.passedDude}/>
     </div>
   );
 }
 Display.propTypes = {
-  passedLife: PropTypes.number
+  passedLife: PropTypes.number,
+  passedDude: PropTypes.string
 };
 export default Display;

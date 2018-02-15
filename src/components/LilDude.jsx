@@ -1,11 +1,12 @@
 import React from 'react';
 import lildude from './../assets/images/lildude.png';
-import PropTypes from 'prop-types';
 import lilDeath from './../assets/images/lilDeath1.jpg';
+import lilYellowDude from './../assets/images/lildude2.png';
+import PropTypes from 'prop-types';
 
 function LilDude(props) {
-  let character = lildude;
-  if (props.statusPassedLife === 0){
+  let character = props.charPassedDude;
+  if (props.charPassedLife === 0){
     character = lilDeath;
   }
   return(
@@ -47,7 +48,8 @@ function LilDude(props) {
 }
 
 LilDude.propTypes = {
-  statusPassedLife: PropTypes.number
+  charPassedLife: PropTypes.number,
+  charPassedDude: PropTypes.string
 };
 
 export default LilDude;
