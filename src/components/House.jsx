@@ -7,7 +7,7 @@ class House extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      life: 78
+      life: 100
     };
     this.homeAddFood = this.homeAddFood.bind(this);
     this.homeAddSleep = this.homeAddSleep.bind(this);
@@ -34,7 +34,7 @@ class House extends React.Component {
   homeUpdate(){
     let updateLife = this.state.life;
     if(updateLife === 0){
-      alert('You Have Killed Lil Dude')
+      alert('You Killed Lil Dude Oh Noes!')
       clearInterval(this.updateTime)
     } else {
       updateLife --;

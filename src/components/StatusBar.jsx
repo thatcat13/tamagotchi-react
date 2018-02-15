@@ -7,6 +7,7 @@ function StatusBar(props) {
   let bar3={}
   let bar2={}
   let bar1={}
+  let header={}
   if (props.statusPassedLife <= 75) {
     bar4 = {
       backgroundColor: '#94bc7d'
@@ -20,6 +21,9 @@ function StatusBar(props) {
   if (props.statusPassedLife <= 25){
     bar2 = {
       backgroundColor: '#94bc7d'
+    };
+    header = {
+      color: 'red'
     };
   }
   if (props.statusPassedLife === 0){
@@ -52,7 +56,7 @@ function StatusBar(props) {
           }
         `}
       </style>
-      <h1>Status Bar {props.statusPassedLife}</h1>
+      <h1 style={header}>Health: {props.statusPassedLife}</h1>
       <div className='mainBar'>
         <div  style={bar1} className='bar'>
 
