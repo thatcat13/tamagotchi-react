@@ -9,7 +9,7 @@
 ##  Description
 This app will allow a user to keep Lil Dude alive. He starts out with 100 health points; if his health reaches zero he dies! The user can click buttons to feed, play with, or put Lil Dude to sleep. Each button will add 10, 5 or 30 points respectively to Lil Dude's health. The user can change the appearance of Lil Dude anytime during the game, either the default Pink Dude or a Yellow Dude option
 
-<a href="https://gyazo.com/5154f2df36eff6543bf930684218324d"><video alt="https://gyazo.com/5154f2df36eff6543bf930684218324d" width="688" autoplay muted loop playsinline><source src="https://i.gyazo.com/5154f2df36eff6543bf930684218324d.mp4" type="video/mp4" /></video></a>
+![https://gyazo.com/5154f2df36eff6543bf930684218324d](https://i.gyazo.com/5154f2df36eff6543bf930684218324d.gif)
 
 <a href="https://gyazo.com/a263a0736faaa08d402723f29b7dda07"><video alt="https://gyazo.com/a263a0736faaa08d402723f29b7dda07" width="724" autoplay muted loop playsinline><source src="https://i.gyazo.com/a263a0736faaa08d402723f29b7dda07.mp4" type="video/mp4" /></video></a>
 
