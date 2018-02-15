@@ -7,6 +7,9 @@
 ### Sam Kissee & Cat Janowitz
 
 ##  Description
+ THis is our detail-riddled component tree as the basis for our app design in the context of React:
+![](./src/assets/component-tree.JPG)
+
 This app will allow a user to keep Lil Dude alive. He starts out with 100 health points; if his health reaches zero he dies! The user can click buttons to feed, play with, or put Lil Dude to sleep. Each button will add 10, 5 or 30 points respectively to Lil Dude's health. The user can change the appearance of Lil Dude anytime during the game, either the default Pink Dude or a Yellow Dude option.
 
 ![Alive GIF](./src/assets/alive.gif)
